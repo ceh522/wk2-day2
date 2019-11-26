@@ -14,6 +14,13 @@ class Bus_StopTest <MiniTest::Test
     assert_equal("Ocean Terminal", @bus1.destination)
   end
 
+  def test_get_bus_number
+    assert_equal(22, @bus1.route)
+  end
+
+  def test_bus_has_drive
+    assert_equal("Brum, brum", @bus1.drive)
+  end
 
 
 
