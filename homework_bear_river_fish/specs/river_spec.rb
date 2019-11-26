@@ -8,10 +8,10 @@ require_relative('../bear')
 
 class RiverTest <MiniTest::Test
 
-def setup ()
-  @fish = Fish.new("Minnow")
-  @river = River.new("Amazon", [@fish, @fish])
-end
+  def setup ()
+    @fish = Fish.new("Minnow")
+    @river = River.new("Amazon", [@fish, @fish])
+  end
 
   def test_get_name
     assert_equal("Amazon", @river.name)
@@ -21,12 +21,15 @@ end
     assert_equal(2, @river.fish_count)
   end
 
-  
-  # - A bear should be able to take a fish from the river
-  # - A river should lose a fish when a bear takes a fish
+  def test_lose_fish
+    assert_equal(0, @river.lose_fish(@fish))
+  end
 
-
-
+  def fish_is_taken_from_river_by_bear(fish)
+    fish = @fish
+    @bear.gain_fish(fish)
+    @river.lose_fish(fish)
+  end
 
 
 end
