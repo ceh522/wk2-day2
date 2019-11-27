@@ -9,7 +9,7 @@ require_relative('../bear')
 class RiverTest <MiniTest::Test
 
   def setup ()
-    @fish = Fish.new("Minnow")
+    @fish = Fish.new("Minnow")                    #probs for clarity, make more, diff fish
     @river = River.new("Amazon", [@fish, @fish])
   end
 
@@ -31,5 +31,20 @@ class RiverTest <MiniTest::Test
     @river.lose_fish(fish)
   end
 
+#need to test for if nothing in river, or would add nil to stomach/food array - no actual food
+
+#solution:
+# def test_can_get_fish
+#   fish = @river.get_fish
+#   assert_equal(@fish3.name, fish.name)
+# end
+#
+# def test_cannot_get_fish_from_empty_river
+#   fish1 = @river.get_fish
+#   fish2 = @river.get_fish
+#   fish3 = @river.get_fish                #emptying river
+#   no_fish = @river.get_fish
+#   assert_nil(no_fish)
+# end
 
 end

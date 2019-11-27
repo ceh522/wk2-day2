@@ -5,6 +5,8 @@ Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 require_relative('../bear')
 require_relative('../fish')
 
+#had as linked to all three - higher level - bear or river could be highest
+
 class BearTest <MiniTest::Test
 
   def setup ()
@@ -33,8 +35,21 @@ class BearTest <MiniTest::Test
     assert_equal(1, result.length)
   end
 
+  # solution
+  # def test_bear_can_take_fish_from_river
+  #   @bear.take_fish_from_river(@river)        #fish out of river, going to bear (intention)
+  #   assert_equal(1, @bear.food_count)         #check what's in stomach
+  #   assert_equal(2, @river.number_of_fishes)  #check what's in river
+  # end
+  #
+  # def test_bear_cant_take_fish_from_empty_river
+  #   river = River.new("Tay", [])
+  #   @bear.take_fish_from_river(river)
+  #   assert_equal(0, @bear.food_count)        #same, but with river with no fish
+  #   assert_equal(0, river.number_of_fishes)
+  # end
 
-
+  #ahould test for this scenario - no fish in river
 
 
 
